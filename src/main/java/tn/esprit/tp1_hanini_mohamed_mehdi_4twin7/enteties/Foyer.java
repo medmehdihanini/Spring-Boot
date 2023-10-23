@@ -7,11 +7,11 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
-
+@Setter
+@Getter
 @Entity
 public class Foyer implements Serializable {
-    @Setter
-    @Getter
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 

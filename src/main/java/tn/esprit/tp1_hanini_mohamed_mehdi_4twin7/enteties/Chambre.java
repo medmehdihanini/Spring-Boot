@@ -9,10 +9,10 @@ import java.lang.reflect.Type;
 import java.util.Set;
 
 @Entity
-
+@Setter
+@Getter
 public class Chambre implements Serializable {
-    @Setter
-    @Getter
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long idChambre;

@@ -3,6 +3,7 @@ package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IuniversiteRepository;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor // edhy constructeur maa final
+@Primary
 //@AllArgsConstructor edhy nektbhouha mnghyr final
 
 public class FoyerServicesImp implements  IfoyerService{
@@ -23,6 +25,7 @@ public class FoyerServicesImp implements  IfoyerService{
 
     @Override
     public Foyer Ajouterfoyer(Foyer f) {
+        System.out.println(f);
         return foyerRepository.save(f);
     }
 

@@ -7,9 +7,10 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Entity
+@Setter
+@Getter
 public class Universite implements Serializable {
-    @Setter
-    @Getter
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idUniversite;

@@ -10,9 +10,10 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
+@Setter
+@Getter
 public class Etudiant implements Serializable {
-    @Setter
-    @Getter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idEtudiant;

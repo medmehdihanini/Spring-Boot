@@ -7,11 +7,11 @@ import lombok.Setter;
 import java.util.Date;
 import java.io.Serializable;
 import java.util.Set;
-
+@Setter
+@Getter
 @Entity
 public class Reservation implements Serializable {
-    @Setter
-    @Getter
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 
