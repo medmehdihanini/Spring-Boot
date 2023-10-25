@@ -12,15 +12,24 @@ import java.util.List;
 @RestController
 public class FoyerRestController {
     private final IfoyerService foyerService;
-
-    @GetMapping("All") //affichage
+    @GetMapping("Allfoyer") //affichage
     public List<Foyer> getAllFoyer() {
         return foyerService.GetAllfoyer();
     }
 
-    @PostMapping("/add") // ajouter
+    @PostMapping("addfoyer") // ajouter
     //@ResponseBody
     public Foyer AddFoyer(@RequestBody Foyer f) {
         return foyerService.Ajouterfoyer(f);
     }
+    @DeleteMapping("deletefoyer/{id}")
+    public void Supprimerfoyer(@PathVariable Long id) {
+        foyerService.SupprimeFoyer(id);
+    }
+    @PutMapping("update/{id}")
+    public Foyer ModifierFoyer( @RequestBody Foyer f) {
+        return foyerService.Updatefoyer(f);
+    }
+
+
 }
