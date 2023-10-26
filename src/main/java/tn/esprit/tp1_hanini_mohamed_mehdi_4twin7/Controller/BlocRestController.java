@@ -23,7 +23,7 @@ public Bloc Addbloc(@RequestBody Bloc b){return blocService.AjouterBloc(b);}
         blocService.SupprimerBloc(id);}
 
     @PutMapping("Updatebloc/{id}")
-            public Bloc MOdifierBlocs(@RequestBody Bloc b)
+    public Bloc MOdifierBlocs(@RequestBody Bloc b)
         {
             return blocService.UpdateBloc(b);
         }
