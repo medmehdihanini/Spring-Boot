@@ -34,4 +34,11 @@ resrvationRepository.deleteById( idReservation);
     public List<Reservation> GetAllReservation() {
         return resrvationRepository.findAll();
     }
+
+
+
+
+
+
+
 }

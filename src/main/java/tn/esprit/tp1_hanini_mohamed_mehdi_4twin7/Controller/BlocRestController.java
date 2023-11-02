@@ -22,16 +22,18 @@ public Bloc Addbloc(@RequestBody Bloc b){return blocService.AjouterBloc(b);}
         System.out.println("tfaskh");
         blocService.SupprimerBloc(id);}
 
-    @PutMapping("Updatebloc/{id}")
+    @PutMapping("Updatebloc")
     public Bloc MOdifierBlocs(@RequestBody Bloc b)
         {
             return blocService.UpdateBloc(b);
         }
 
 
-
-
-
+@PutMapping("affecteChambre/{nom}")
+    public Bloc affecterChambreBloc(@RequestBody List<Long>numChambre,@PathVariable String nom)
+{
+return blocService.affecterChambresABloc(numChambre,nom);
+}
 
 
 

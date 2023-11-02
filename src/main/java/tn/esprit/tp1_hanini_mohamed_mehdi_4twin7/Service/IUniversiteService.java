@@ -11,5 +11,9 @@ public interface IUniversiteService {
     Universite GetUniversite(long idUniversite);
     List<Universite> GetAllUuniversite();
 
+    Universite findbyNomuniv(String nom);
 
+
+    Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite);
+ Universite desaffecterFoyerAUniversite (long idFoyer, long idUniversite) ;
 }

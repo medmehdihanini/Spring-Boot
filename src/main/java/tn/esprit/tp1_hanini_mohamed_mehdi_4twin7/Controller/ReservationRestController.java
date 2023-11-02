@@ -22,7 +22,7 @@ public class ReservationRestController {
 
         reservationService.SupprimerReservation(id);}
 
-    @PutMapping("UpdateReservation/{id}")
+    @PutMapping("UpdateReservation")
     public Reservation MOdifierBlocs(@RequestBody Reservation r)
     {
         return reservationService.UpdateReservation(r);

@@ -1,7 +1,6 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +13,7 @@ import java.util.Set;
 public class Bloc implements Serializable {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloc;
     private String nomBloc;
     private Long capaciteBloc;

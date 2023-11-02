@@ -19,7 +19,7 @@ public class ChambreRestController {
     public Chambre AjoutChambre(@RequestBody Chambre c){
    return chambreService.AjoutChambre(c);
     }
-    @PutMapping("Update/{id}")
+    @PutMapping("Update")
     public Chambre Updatechambre(@RequestBody Chambre c ){
         return chambreService.UpdateChambre(c);
     }

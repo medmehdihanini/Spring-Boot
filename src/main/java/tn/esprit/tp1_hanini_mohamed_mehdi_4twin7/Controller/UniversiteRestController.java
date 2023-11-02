@@ -27,9 +27,25 @@ public class UniversiteRestController {
     public void SupprimerUniversite(@PathVariable Long id) {
         universiteService.SupprimerUniversite(id);
     }
-    @PutMapping("update/{id}")
+    @PutMapping("update")
     public Universite ModifierUniversite( @RequestBody Universite u) {
         return universiteService.UpdateUniversite(u);
     }
+@PutMapping("affecteruniv/{idfoyer}/{nom}")
+   public Universite AffecterUnivAFoyer(@PathVariable long idfoyer, @PathVariable String nom )
+{
+    return universiteService.affecterFoyerAUniversite(idfoyer,nom);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -19,7 +19,7 @@ public class EtudiantRestController {
     public Etudiant AddEtudiant(@RequestBody Etudiant e){
         return etudiantService.AjouterEtudiant(e);
     }
-    @PutMapping("UpdateEtudiant/{id}")
+    @PutMapping("UpdateEtudiant")
     public Etudiant UpdateEtudiant(@RequestBody Etudiant e){
         return etudiantService.UpdateEtudiant(e);
     }

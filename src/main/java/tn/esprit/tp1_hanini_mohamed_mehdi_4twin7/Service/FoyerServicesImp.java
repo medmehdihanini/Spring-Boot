@@ -1,16 +1,16 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IuniversiteRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Foyer;
+import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Universite;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor // edhy constructeur maa final
 @Primary
@@ -50,4 +50,6 @@ public class FoyerServicesImp implements  IfoyerService{
     public List<Foyer> GetAllfoyer() {
         return foyerRepository.findAll();
     }
+
+
 }

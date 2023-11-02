@@ -26,10 +26,17 @@ public class FoyerRestController {
     public void Supprimerfoyer(@PathVariable Long id) {
         foyerService.SupprimeFoyer(id);
     }
-    @PutMapping("update/{id}")
+    @PutMapping("update")
     public Foyer ModifierFoyer( @RequestBody Foyer f) {
         return foyerService.Updatefoyer(f);
     }
+
+    @GetMapping("getfoyer/{id}")
+    public Foyer getfoyerByid(@PathVariable long id){
+        return foyerService.Getfoyer(id);
+    }
+
+
 
 
 }

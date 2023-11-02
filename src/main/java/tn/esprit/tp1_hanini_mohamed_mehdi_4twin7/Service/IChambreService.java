@@ -10,4 +10,5 @@ public interface IChambreService {
     void SupprimerChambre(long idChambre);
     Chambre GetChambre(long idChambre);
     List<Chambre> GetAllChambres();
+
 }
