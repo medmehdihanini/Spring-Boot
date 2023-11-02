@@ -8,8 +8,11 @@ import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IchambreRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Bloc;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Chambre;
+import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Foyer;
 
 import java.util.List;
+import java.util.Set;
+
 @Service
 @AllArgsConstructor
 public class BlocServicesImp implements  IBlocService{
@@ -47,9 +50,15 @@ blocRepository.deleteById(idBloc);
         for(Long id : numChambre){
             Chambre c = chambreRepository.findById(id).orElse(null);
             c.setBloc2(b);
-
         }
-
+        return b;
+    }
+@Transactional
+    @Override
+    public Bloc affecterBlocAFoyer(String nomBloc, String nomFoyer) {
+        Bloc b = blocRepository.findByNomBloc(nomBloc);
+        Foyer f = foyerRepository.findByNomFoyer(nomFoyer);
+        b.setFoyer(f);
         return b;
     }
 }

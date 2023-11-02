@@ -13,4 +13,5 @@ public interface IfoyerService {
 
     List<Foyer> GetAllfoyer();
 
+
 }

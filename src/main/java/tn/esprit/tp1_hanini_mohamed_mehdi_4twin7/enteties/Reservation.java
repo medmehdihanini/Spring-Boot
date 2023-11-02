@@ -1,5 +1,6 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,10 +19,10 @@ public class Reservation implements Serializable {
     private long idReservation;
     private Date anneUniversitaire;
     private boolean estvalide;
-
+    @JsonIgnore
     @ManyToOne
     private Chambre chamber;
-
+    @JsonIgnore
     @ManyToMany
     private Set<Etudiant> etudiants;
 }

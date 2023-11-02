@@ -7,4 +7,5 @@ public interface IuniversiteRepository extends JpaRepository<Universite,Long> {
 Universite findByNomUniversite(String nom);
 
 
+
 }

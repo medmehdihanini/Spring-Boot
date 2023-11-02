@@ -1,5 +1,6 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,10 +20,10 @@ public class Chambre implements Serializable {
     private long numchambre;
 
     private TypeChambre typeChambre;
-
+    @JsonIgnore
     @ManyToOne
     private Bloc bloc2;
-
+    @JsonIgnore
     @OneToMany
     private Set<Reservation> reservations;
 

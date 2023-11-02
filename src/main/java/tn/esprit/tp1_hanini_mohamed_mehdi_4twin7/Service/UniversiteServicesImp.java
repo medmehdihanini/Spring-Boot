@@ -9,11 +9,13 @@ import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Foyer;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Universite;
 
 import java.util.List;
+
 @Service
 @AllArgsConstructor
-public class UniversiteServicesImp implements  IUniversiteService{
-IuniversiteRepository universiteRepository;
-IfoyerRepository foyerRepository;
+public class UniversiteServicesImp implements IUniversiteService {
+    IuniversiteRepository universiteRepository;
+    IfoyerRepository foyerRepository;
+
     @Override
     public Universite AjouterUniversite(Universite u) {
         return universiteRepository.save(u);
@@ -26,7 +28,7 @@ IfoyerRepository foyerRepository;
 
     @Override
     public void SupprimerUniversite(long idUniversite) {
-universiteRepository.deleteById(idUniversite);
+        universiteRepository.deleteById(idUniversite);
     }
 
     @Override
@@ -43,13 +45,13 @@ universiteRepository.deleteById(idUniversite);
     public Universite findbyNomuniv(String nom) {
         return universiteRepository.findByNomUniversite(nom);
     }
+
     @Override
     @Transactional
     public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) {
-        Foyer f= foyerRepository.findById(idFoyer).orElse(null);
+        Foyer f = foyerRepository.findById(idFoyer).orElse(null);
         Universite uni = universiteRepository.findByNomUniversite(nomUniversite);
-        if (f!=null && uni!=null)
-        {
+        if (f != null && uni != null) {
             uni.setFoyer(f);
             return uni;
 
@@ -57,10 +59,17 @@ universiteRepository.deleteById(idUniversite);
         return null;
     }
 
+
     @Override
+    @Transactional
     public Universite desaffecterFoyerAUniversite(long idFoyer, long idUniversite) {
-        Foyer f =foyerRepository.findById(idFoyer).orElse(null);
+        Foyer f = foyerRepository.findById(idFoyer).orElse(null);
         Universite u = universiteRepository.findById(idUniversite).orElse(null);
+        if (f != null && u != null) {
+            u.setFoyer(null);
+            return u;
+        }
+
         return null;
     }
 

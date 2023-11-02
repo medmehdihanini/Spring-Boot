@@ -10,4 +10,6 @@ public interface IReservationService {
     void SupprimerReservation(long idReservation);
     Reservation GetReservation(long idReservation);
     List<Reservation> GetAllReservation();
+     Reservation ajouterReservationEtAssignerAChambreEtAEtudiant (Reservation res, Long
+            numChambre, Long cin) ;
 }
