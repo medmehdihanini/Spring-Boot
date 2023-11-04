@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IchambreRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.IChambreService;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Chambre;
+import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.TypeChambre;
 
 import java.util.List;
 
@@ -26,6 +27,23 @@ public class ChambreRestController {
     @DeleteMapping("deleteChambre/{id}")
     public void SupprimerChambre(@PathVariable long id){
         chambreService.SupprimerChambre(id);
+    }
+ @GetMapping("getChambresParNomBloc/{nomBloc}")
+    public List<Chambre> getChambresParNomBloc(@PathVariable String nomBloc){
+       return chambreService.getChambresParNomBloc(nomBloc);
+
+    }
+
+    @GetMapping("nbChambreParTypeEtBloc/{type}/{idbloc}")
+    public long nbChambreParTypeEtBloc(@PathVariable TypeChambre type,@PathVariable long idbloc){
+       return chambreService.nbChambreParTypeEtBloc(type,idbloc);
+
+    }
+
+    @GetMapping("getChambresNonReserveParNomFoyerEtTypeChambre/{nomFoyer}/{type}")
+    public List<Chambre> getChambresNonReserveParNomFoyerEtTypeChambre(@PathVariable String nomFoyer, @PathVariable TypeChambre type){
+       return chambreService.getChambresNonReserveParNomFoyerEtTypeChambre(nomFoyer,type);
+
     }
 
 

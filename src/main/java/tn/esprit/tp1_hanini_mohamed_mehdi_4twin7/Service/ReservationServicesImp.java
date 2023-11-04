@@ -9,6 +9,7 @@ import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IetudiantRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IresrvationRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Reservation;
 
+import java.util.Date;
 import java.util.List;
 @Service
 @AllArgsConstructor
@@ -51,6 +52,12 @@ resrvationRepository.deleteById( idReservation);
        resrvation.getEtudiants().add(etudiantRepository.findEtudiantByCin(cin));
         return resrvation;
 
+    }
+
+    @Override
+    public long getReservationParAnneeUniversitaire(Date debutAnnee, Date finAnnee) {
+        List<Reservation> reservation =  resrvationRepository.findByAnneUniversitaireBetween(debutAnnee, finAnnee);
+        return reservation.size();
     }
 
 

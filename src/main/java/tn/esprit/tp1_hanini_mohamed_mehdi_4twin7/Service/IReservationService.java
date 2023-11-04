@@ -2,6 +2,7 @@ package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service;
 
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Reservation;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IReservationService {
@@ -12,4 +13,5 @@ public interface IReservationService {
     List<Reservation> GetAllReservation();
      Reservation ajouterReservationEtAssignerAChambreEtAEtudiant (Reservation res, Long
             numChambre, Long cin) ;
+    long getReservationParAnneeUniversitaire(Date debutAnnee, Date finAnnee ) ;
 }
