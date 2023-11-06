@@ -1,4 +1,4 @@
-package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service;
+package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.Imp;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IblocRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IchambreRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
+import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.IBlocService;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Bloc;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Chambre;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Foyer;
@@ -15,7 +16,7 @@ import java.util.Set;
 
 @Service
 @AllArgsConstructor
-public class BlocServicesImp implements  IBlocService{
+public class BlocServicesImp implements IBlocService {
     IfoyerRepository foyerRepository;
     IblocRepository blocRepository;
   IchambreRepository chambreRepository;
@@ -50,6 +51,7 @@ blocRepository.deleteById(idBloc);
         for(Long id : numChambre){
             Chambre c = chambreRepository.findById(id).orElse(null);
             c.setBloc2(b);
+
         }
         return b;
     }

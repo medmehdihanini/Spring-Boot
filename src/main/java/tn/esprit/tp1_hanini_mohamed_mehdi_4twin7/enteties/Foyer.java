@@ -21,11 +21,9 @@ public class Foyer implements Serializable {
 
     private String nomFoyer;
     private Long capaciteFoyer;
-    @JsonIgnore
     @OneToOne(mappedBy = "foyer")
     private Universite universite;
-    @JsonIgnore
-    @OneToMany(mappedBy = "foyer")
+    @OneToMany(mappedBy = "foyer" ,cascade = {CascadeType.REMOVE,CascadeType.PERSIST},fetch = FetchType.EAGER)
     private Set<Bloc> blocs;
 
 }

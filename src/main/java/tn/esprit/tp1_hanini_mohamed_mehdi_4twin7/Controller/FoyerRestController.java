@@ -35,7 +35,11 @@ public class FoyerRestController {
     public Foyer getfoyerByid(@PathVariable long id){
         return foyerService.Getfoyer(id);
     }
+    @PostMapping("ajouterFoyerEtAffecterAUniversite/{iduniversite}")
 
+    public Foyer ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer f, @PathVariable long iduniversite) {
+        return foyerService.ajouterFoyerEtAffecterAUniversite(f, iduniversite);
+    }
 
 
 

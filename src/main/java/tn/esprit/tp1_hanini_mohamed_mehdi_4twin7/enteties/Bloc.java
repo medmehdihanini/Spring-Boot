@@ -16,13 +16,14 @@ public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloc;
+    @Column(unique = true)
     private String nomBloc;
     private Long capaciteBloc;
     @JsonIgnore
     @ManyToOne
     private Foyer foyer;
     @JsonIgnore
-    @OneToMany(mappedBy = "bloc2")
+    @OneToMany(mappedBy = "bloc2",cascade = {CascadeType.REMOVE,CascadeType.PERSIST},fetch = FetchType.EAGER)
     private Set<Chambre> chambres;
 }
 

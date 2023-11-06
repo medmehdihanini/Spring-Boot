@@ -1,10 +1,11 @@
-package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service;
+package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.Imp;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IuniversiteRepository;
+import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.IUniversiteService;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Foyer;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.Universite;
 
