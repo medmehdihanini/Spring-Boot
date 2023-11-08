@@ -20,12 +20,12 @@ public class Reservation implements Serializable {
 
     private long idReservation;
     private String numReservation;
-    private LocalDate anneUniversitaire;
+    private LocalDate DebUniversitaire;
+    private LocalDate FinUniversitaire;
     private boolean estvalide;
+
+
     @JsonIgnore
-    @ManyToOne
-    private Chambre chamber;
-    @JsonIgnore
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.REMOVE,CascadeType.PERSIST},fetch = FetchType.EAGER)
     private Set<Etudiant> etudiants;
 }

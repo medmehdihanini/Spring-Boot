@@ -34,12 +34,16 @@ public class ReservationRestController {
     {
         return reservationService.ajouterReservationEtAssignerAChambreEtAEtudiant(r,numChambre,id_etudiant);
     }
-    @GetMapping("getReservationParAnneeUniversitaire/{debutAnnee}/{finAnnee}")
-public long getReservationParAnneeUniversitaire(
-        @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date debutAnnee,
-        @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date finAnnee){
-    return reservationService.getReservationParAnneeUniversitaire(debutAnnee, finAnnee);
-}
+    @PutMapping("ajouterReservation/{idchambre}/{cin_etudiant}")
+    public Reservation ajouterReservation(  @PathVariable long idchambre, @PathVariable long cin_etudiant)
+    {
+        return reservationService.ajouterReservation(idchambre,cin_etudiant);
+    }
+    @DeleteMapping ("annulerReservation/{cin_etudiant}")
+    public Reservation annulerReservation( @PathVariable long cin_etudiant)
+    {
+        return reservationService.annulerReservation(cin_etudiant);
+    }
 
 
 

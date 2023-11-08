@@ -2,6 +2,7 @@ package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.Imp;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IblocRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IchambreRepository;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IfoyerRepository;
@@ -89,6 +90,11 @@ public List<Chambre> getChambresNonReserveParNomFoyerEtTypeChambre(String nomFoy
   return chambre;
 }
 
+    @Override
+    public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
+        Bloc b = blocRepository.findById(idBloc).orElse(null);
+
+return  chambreRepository.findByBloc2AndTypeChambre(b,typeC);  }
 
 
 }
