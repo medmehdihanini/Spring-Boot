@@ -14,10 +14,10 @@ public interface IchambreRepository extends JpaRepository<Chambre,Long> {
     List<Chambre> findByTypeChambreAndBloc2AndReservations(TypeChambre type, Bloc bloc, Reservation reservation);
 Chambre findChambreByReservations(Reservation reservation);
 List<Chambre> findByBloc2AndTypeChambre(Bloc bloc, TypeChambre type);
-/*
-    @Query("SELECT c FROM Chambre c WHERE c.bloc = :bloc AND c.typeChambre = :type")
+
+    @Query("SELECT c FROM Chambre c WHERE c.bloc2 = :bloc AND c.typeChambre = :type")
     List<Chambre> findByBlocAndTypeChambre(@Param("bloc") Bloc bloc, @Param("type") TypeChambre type);
-    */
+
 
 
 }
