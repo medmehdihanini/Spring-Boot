@@ -6,11 +6,13 @@ import java.util.List;
 
 public interface IEtudiantService {
     Etudiant AjouterEtudiant(Etudiant e);
+    Boolean AjouterEtudiantAPI(Etudiant e);
     Etudiant UpdateEtudiant (Etudiant e);
     void SupprimerEtdiant (long idEtudiant);
      Etudiant GetEtudiant(long idEtudiant);
      List<Etudiant> GetAllEtudiant();
-
+     Etudiant loginetudiant(String email, String password);
+     Etudiant getEtudiant(long id );
 
 
 

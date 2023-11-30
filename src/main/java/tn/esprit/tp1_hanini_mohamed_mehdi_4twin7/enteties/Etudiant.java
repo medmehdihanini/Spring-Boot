@@ -23,6 +23,8 @@ public class Etudiant implements Serializable {
     private long cin;
     private String ecole;
     private Date dateNaissance;
+    private String email;
+    private String passoword;
     @JsonIgnore
     @ManyToMany(mappedBy = "etudiants",cascade = {CascadeType.REMOVE,CascadeType.PERSIST},fetch = FetchType.EAGER)
     private Set<Reservation> reservations;

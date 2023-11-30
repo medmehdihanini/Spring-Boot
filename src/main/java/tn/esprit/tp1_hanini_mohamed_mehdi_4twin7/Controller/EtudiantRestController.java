@@ -10,7 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("Etudiant")
 @RestController
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class EtudiantRestController {
     private final IEtudiantService etudiantService;
     @GetMapping("Alletudiant")
@@ -29,7 +29,21 @@ public class EtudiantRestController {
 
 
 
+    @PostMapping("AddEtudiantapi")
+    public Boolean AddEtudiantAPI(@RequestBody Etudiant e){
+        return etudiantService.AjouterEtudiantAPI(e);
+    }
 
+    @PostMapping("login")
+    public Etudiant loginetudiant(@RequestBody Etudiant e){
+        return etudiantService.loginetudiant(e.getEmail(),e.getPassoword());
+    }
+
+
+    @GetMapping("one/{id}")
+    public Etudiant getEtudiant(@PathVariable long id){
+        return etudiantService.getEtudiant(id);
+    }
 
 
 
