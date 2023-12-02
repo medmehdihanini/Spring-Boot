@@ -45,6 +45,18 @@ public class EtudiantRestController {
         return etudiantService.getEtudiant(id);
     }
 
+    @GetMapping("blocked/{id}")
+    public Etudiant etudiantBlocked(@PathVariable long id){
+        return etudiantService.etudiantBlocked(id);
+    }
+
+
+    @PostMapping("offline/{id}")
+    public Etudiant etatOflline(@PathVariable long id){
+        return etudiantService.etatOflline(id);
+    }
+
+
 
 
 

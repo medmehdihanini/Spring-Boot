@@ -13,6 +13,8 @@ public interface IEtudiantService {
      List<Etudiant> GetAllEtudiant();
      Etudiant loginetudiant(String email, String password);
      Etudiant getEtudiant(long id );
+     Etudiant etudiantBlocked(long id);
+     Etudiant etatOflline(long id);
 
 
 
