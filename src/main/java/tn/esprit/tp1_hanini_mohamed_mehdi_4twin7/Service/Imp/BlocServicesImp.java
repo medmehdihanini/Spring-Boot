@@ -1,6 +1,7 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.Imp;
 
 import lombok.AllArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IblocRepository;
@@ -59,6 +60,7 @@ blocRepository.deleteById(idBloc);
     @Override
     public Bloc affecterBlocAFoyer(String nomBloc, String nomFoyer) {
         Bloc b = blocRepository.findByNomBloc(nomBloc);
+
         Foyer f = foyerRepository.findByNomFoyer(nomFoyer);
         b.setFoyer(f);
         return b;

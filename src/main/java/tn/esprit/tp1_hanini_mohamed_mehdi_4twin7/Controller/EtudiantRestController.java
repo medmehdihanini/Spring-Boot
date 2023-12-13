@@ -48,6 +48,9 @@ public class EtudiantRestController {
     @GetMapping("blocked/{id}")
     public Etudiant etudiantBlocked(@PathVariable long id){
         return etudiantService.etudiantBlocked(id);
+    }@GetMapping("unblocked/{id}")
+    public Etudiant unblock(@PathVariable long id){
+        return etudiantService.unblock(id);
     }
 
 

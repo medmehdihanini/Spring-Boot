@@ -1,6 +1,7 @@
 package tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Service.Imp;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.Repository.IblocRepository;
@@ -14,6 +15,7 @@ import tn.esprit.tp1_hanini_mohamed_mehdi_4twin7.enteties.TypeChambre;
 
 import java.util.ArrayList;
 import java.util.List;
+@Slf4j
 
 @Service
 @AllArgsConstructor
@@ -78,6 +80,8 @@ public List<Chambre> getChambresNonReserveParNomFoyerEtTypeChambre(String nomFoy
 
   Foyer foyer = foyerRepository.findByNomFoyer(nomFoyer);
         List<Chambre> chambre = new ArrayList<>();
+
+
   List<Bloc> blocs = blocRepository.findByFoyer(foyer);
   for (Bloc b : blocs) {
 

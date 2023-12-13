@@ -19,7 +19,7 @@ public class EtudiantServicesImp implements IEtudiantService {
     @Override
     public Etudiant AjouterEtudiant(Etudiant e) {
         e.setRole("user");
-        e.setEtat(0);
+        e.setEtat(1);
         String passwordcode = this.passwordEncoder.encode(e.getPassoword());
         e.setPassoword(passwordcode);
         etudiantRepository.save(e);
@@ -48,6 +48,7 @@ e.setEtat(0);
 
     @Override
     public void SupprimerEtdiant(long idEtudiant) {
+
         etudiantRepository.deleteById( idEtudiant);
 
     }
@@ -66,12 +67,13 @@ e.setEtat(0);
     public Etudiant loginetudiant(String email, String password) {
         Etudiant etudiant = etudiantRepository.findEtudiantByEmail(email);
         System.out.println("edha etudinat eli jebtou "+etudiant.getEmail());
-        if(passwordEncoder.matches(password,etudiant.getPassoword())){
+        if(passwordEncoder.matches(password,etudiant.getPassoword())&& etudiant.getEtat()!=5){
             System.out.println("fi west if  "+etudiant.getEmail());
 
             etudiant.setEtat(1);
             etudiantRepository.save(etudiant);
             return etudiant;
+
         }
 
 
@@ -90,6 +92,13 @@ e.setEtat(0);
         etudiant.setEtat(5);
         return etudiantRepository.save(etudiant);
     }
+
+    @Override
+    public Etudiant unblock(long id) {
+        Etudiant etudiant = etudiantRepository.findById(id).orElse(null);
+        assert etudiant != null;
+        etudiant.setEtat(0);
+        return etudiantRepository.save(etudiant);    }
 
     @Override
     public Etudiant etatOflline(long id) {
